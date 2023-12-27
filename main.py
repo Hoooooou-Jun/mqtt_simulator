@@ -1,11 +1,16 @@
+from dotenv import load_dotenv
+import os
 from awscrt import io, mqtt
 from awsiot import mqtt_connection_builder
 from datetime import datetime, timedelta
 import json
 
+# load .env
+load_dotenv()
+
 # Set config
 current_time = datetime.now() - timedelta(hours=9)
-ENDPOINT = "a17ogm4peuesi7-ats.iot.ap-northeast-2.amazonaws.com"
+ENDPOINT = os.environ.get('MQTT_ENDPOINT')
 CLIENT_ID = "MqttLocalSiteP"
 PATH_TO_CERTIFICATE = "CA/e5952f1f1c3c48302499f008b27a278404691f1727eb3c0b4eacb500dec5cc76-certificate.pem.crt"
 PATH_TO_PRIVATE_KEY = "CA/e5952f1f1c3c48302499f008b27a278404691f1727eb3c0b4eacb500dec5cc76-private.pem.key"
