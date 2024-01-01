@@ -1,6 +1,6 @@
 import json
 
-file_path = "./dumy.json"
+file_path = "./dummy.json"
 def read_json():
     try:
         with open(file_path, 'r') as file:
