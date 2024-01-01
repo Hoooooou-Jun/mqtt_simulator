@@ -10,9 +10,9 @@ class Mqtt:
         self.topic = topic
         self.current_time = datetime.now() - timedelta(hours=9)
         self.endpoint = os.environ.get('MQTT_ENDPOINT')
-        self.path_to_certificate = "CA/e5952f1f1c3c48302499f008b27a278404691f1727eb3c0b4eacb500dec5cc76-certificate.pem.crt"
-        self.path_to_private_key = "CA/e5952f1f1c3c48302499f008b27a278404691f1727eb3c0b4eacb500dec5cc76-private.pem.key"
-        self.path_to_amazon_root_ca_1 = "CA/AmazonRootCA1.pem"
+        self.path_to_certificate = "../CA/e5952f1f1c3c48302499f008b27a278404691f1727eb3c0b4eacb500dec5cc76-certificate.pem.crt"
+        self.path_to_private_key = "../CA/e5952f1f1c3c48302499f008b27a278404691f1727eb3c0b4eacb500dec5cc76-private.pem.key"
+        self.path_to_amazon_root_ca_1 = "../CA/AmazonRootCA1.pem"
     def mqttConnection(self):
         event_loop_group = io.EventLoopGroup(1)
         host_resolver = io.DefaultHostResolver(event_loop_group)
