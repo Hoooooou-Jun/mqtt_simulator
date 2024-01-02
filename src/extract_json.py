@@ -1,5 +1,5 @@
 import json
-def output_json(device_id, coordinate):
+def extract_json(device_id, coordinate):
     output_data = {device_id: []}
 
     # add coordinate at data
