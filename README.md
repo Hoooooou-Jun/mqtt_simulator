@@ -17,7 +17,7 @@ __REQUIREMENT__
 1. It is recommended to use it in a "PyCharm"
 2. you need python interpreter version 3.10 or higher
 3. you will access virtual environment as "venv"
-4. you will enter "pip install -r requirements.txt"
+4. you will enter "pip install -r requirements.txt" at the terminal within root directory
 
 Next, get start your program, you will see a prompt like this:
 
