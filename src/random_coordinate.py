@@ -2,9 +2,13 @@ import math
 import random
 
 def random_coordinate(latitude, longitude, distance, count):
-    coordinate = []
+    coordinates = []
+    lat_radian = math.radians(float(latitude))
+    lon_radian = math.radians(float(longitude))
 
-    for _ in range(count):
+    for _ in range(int(count)):
+        earth_radius = 6371.0
+
         # Generate random angle(direction)
         angle = random.uniform(0, 2 * math.pi)
 
@@ -12,12 +16,14 @@ def random_coordinate(latitude, longitude, distance, count):
         radius = random.uniform(0, distance)
 
         # Calculate coordinate using Haversine formula
-        cal_latitude = math.degrees(radius / 6371.0)
-        cal_longitude = math.degrees(radius / (6371.0 * math.cos(math.radians(latitude))))
+        cal_latitude = math.asin(math.sin(lat_radian) * math.cos(radius / earth_radius) + math.cos(lat_radian) * math.sin(distance / earth_radius) * math.cos(angle))
+        cal_longitude = lon_radian + math.atan2(math.sin(angle) * math.sin(radius / earth_radius) * math.cos(lat_radian),
+                                                     math.cos(radius / earth_radius) - math.sin(lat_radian) * math.sin(cal_latitude))
 
-        # Add random distance within fixed radius
-        res_latitude = round(latitude + cal_latitude * math.sin(angle), 6)
-        res_longitude = round(longitude + cal_longitude * math.cos(angle), 6)
+        # Convert radian to degrees
+        res_latitude = round(math.degrees(cal_latitude), 6)
+        res_longitude = round(math.degrees(cal_longitude), 6)
 
-        coordinate.append((res_latitude, res_longitude))
-    return coordinate
+        coordinates.append((res_latitude, res_longitude))
+
+    return coordinates
