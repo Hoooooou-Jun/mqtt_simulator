@@ -11,7 +11,15 @@ There are 4 functions.
 The source was written in ENG, but user prompt was written for korea
 
 ## Manual
-Once get start your program, you will see a prompt like this:
+first, you need to pull source this repository
+
+__REQUIREMENT__
+1. It is recommended to use it in a "PyCharm"
+2. you need python interpreter version 3.10 or higher
+3. you will access virtual environment as "venv"
+4. you will enter "pip install -r requirements.txt"
+
+Next, get start your program, you will see a prompt like this:
 
 ![Screenshot 2024-01-02 at 3 32 07 PM](https://github.com/Hoooooou-Jun/mqtt_simulator/assets/84234490/571c9dac-5406-4ff8-8a62-ce93d363110a)
 
